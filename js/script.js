@@ -4,6 +4,7 @@
   });*/
   const titleClickHandler = function(event){
     console.log('titleClickHandler', event);
+    
     console.log('Link was clicked!');
   
     /* remove class 'active' from all article links  */
@@ -13,9 +14,9 @@
       activeLink.classList.remove('active');
     }
     /* add class 'active' to the clicked link */
-  
+    
     /* remove class 'active' from all articles */
-    const activeArticles = document.querySelectorAll(' .posts .active');
+    const activeArticles = document.querySelectorAll(' .post.active');
 
     for(let activeArticle of activeArticles){
       activeArticle.classList.remove('active');
