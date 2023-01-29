@@ -34,9 +34,47 @@
     targetArticle.classList.add('active');
 
 }
-const links = document.querySelectorAll('.titles a');
+
+
+const optArticleSelector = '.post',
+    optTitleSelector = '.post-title',
+    optTitleListSelector = '.titles';
+
+function generateTitleLinks() {
+
+    /* remove contents of titleList */
+    const titleList = document.querySelector(optTitleListSelector);
+    function clearTitleList() {
+        titleList.innerHTML = '';
+    }
+    clearTitleList();
+
+    /* for each article */
+    const articles = document.querySelectorAll(optArticleSelector);
+    for (let article of articles) {
+
+        /* get the article id */
+        const articleId = article.getAttribute('id');
+        /* find the title element */
+        const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+        let html = '';
+        /* get the title from the title element */
+        const linkHTML = '<li><a href="#' + articleId + '"><span>' + articleTitle + '</span></a></li>';
+        /* create HTML of the link */
+        
+        console.log(linkHTML);
+        
+        /* insert link into titleList */
+        titleList.insertAdjacentHTML('beforeend', linkHTML);
+        html = html + linkHTML;  
+    }
+
+    const links = document.querySelectorAll('.titles a');
 
 for (let link of links) {
     link.addEventListener('click', titleClickHandler);
+    console.log(links);
 }
+}
+generateTitleLinks();
 
