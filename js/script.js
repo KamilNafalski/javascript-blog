@@ -277,7 +277,7 @@ function authorClickHandler(event){
   const clickedElement = this;
 
   const href = clickedElement.getAttribute('href');
-  //console.log(href);
+  
   const author = href.replace('#author-', '');
   //console.log(author);
   const allAuthorsLinks = document.querySelectorAll('a.active[href^="#author-"]');
